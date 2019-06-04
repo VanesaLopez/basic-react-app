@@ -17,11 +17,6 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              camelCase: true,
-            },
           },
           {
             loader: 'sass-loader',
@@ -40,7 +35,7 @@ module.exports = merge(common, {
   plugins: [
     new dotenv({
         path: './prod.env',
-    }),  
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[chunkhash].css',
       chunkFilename: '[id].css',

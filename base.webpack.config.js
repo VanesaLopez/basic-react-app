@@ -10,6 +10,7 @@ module.exports = {
   },
   entry: {
     app: './js/main.tsx',
+    appStyles: ['./css/main.scss',],
     vendor: ['react', 'react-dom']
   },
   optimization: {
@@ -28,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },

@@ -26,11 +26,6 @@ module.exports = merge(common, {
           'style-loader',
           {
             loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              camelCase: true,
-            },
           },
           {
             loader: 'sass-loader',
@@ -45,10 +40,10 @@ module.exports = merge(common, {
         use: ['style-loader', 'css-loader'],
       },
     ],
-  }, 
+  },
   plugins: [
     new dotenv({
       path: './dev.env',
     })
-  ] 
+  ]
 });
