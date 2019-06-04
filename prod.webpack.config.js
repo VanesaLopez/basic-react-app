@@ -7,7 +7,7 @@ const dotenv = require('dotenv-webpack');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: './js/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -29,6 +29,16 @@ module.exports = merge(common, {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'responsive-loader',
+          options: {
+          name: './img/[hash].[name].[ext]'
+          },
+        }
       },
     ],
   },

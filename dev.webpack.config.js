@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
-    filename : '[name].js'
+    filename : './js/[name].js'
   },
   module: {
     rules: [
@@ -39,6 +39,17 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+          loader: 'responsive-loader',
+          options: {
+          name: './img/[name].[ext]'
+          },
+        }]
+      }
     ],
   },
   plugins: [

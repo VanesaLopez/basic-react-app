@@ -1,3 +1,19 @@
-.title {
-    color: $colorBase;
+.content {
+    max-width: 20rem;
+    margin: 0 auto;
+
+    .nav__main {
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        .title {
+            color: $colorBase;
+        }
+
+        img {
+            display: block;
+            width: 200px;
+        }
+    }
+
 }
