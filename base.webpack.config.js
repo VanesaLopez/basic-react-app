@@ -1,7 +1,7 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-var path = require('path');
-var basePath = __dirname;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
+const basePath = __dirname;
 
 module.exports = {
   context: path.join(basePath, 'src'),
@@ -25,7 +25,6 @@ module.exports = {
       },
     },
   },
-
   module: {
     rules: [
       {
@@ -36,6 +35,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html', //Name of file in ./dist/

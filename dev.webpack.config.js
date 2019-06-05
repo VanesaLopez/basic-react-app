@@ -36,10 +36,6 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(png|jpg)$/,
         exclude: /node_modules/,
         use: [
