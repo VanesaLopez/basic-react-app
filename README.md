@@ -1,6 +1,6 @@
 # basic-react-app
 
-Basic application with React, typescript, images responsive loader.
+Basic webpack application with React, typescript, images responsive loader.
 
 The application has configuration for development and production environments and bundle analyzer.
 
